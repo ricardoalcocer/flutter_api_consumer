@@ -33,14 +33,15 @@ class Example1 extends StatefulWidget {
 
 class _Example1State extends State<Example1> {
   // int _counter = 0;
+  String _jsondata = "no";
 
-  // void _incrementCounter() {
-  //   setState(
-  //     () {
-  //       _counter++;
-  //     },
-  //   );
-  // }
+  void _incrementCounter() {
+    setState(
+      () {
+        _jsondata = "no, nope";
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,31 +50,16 @@ class _Example1State extends State<Example1> {
         title: Text(
           widget.title,
         ),
-        // actions: [
-        // IconButton(
-        //   icon: const Icon(Icons.refresh_rounded),
-        //   tooltip: 'Refresh',
-        //   onPressed: () {
-        //     // ScaffoldMessenger.of(context).showSnackBar(
-        //     //   const SnackBar(
-        //     //     content: Text(
-        //     //       'This is a snackbar',
-        //     //     ),
-        //     //   ),
-        //     // );
-        //   },
-        // ),
-        // ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const <Widget>[
+        children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
-              '{"test":"data","test":"data","test":"data","test":"data","test":"data","test":"data"}',
+              _jsondata,
               textAlign: TextAlign.left,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
               ),
             ),
@@ -81,7 +67,9 @@ class _Example1State extends State<Example1> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          _incrementCounter();
+        },
         tooltip: 'Increment',
         child: const Icon(
           Icons.refresh_rounded,
