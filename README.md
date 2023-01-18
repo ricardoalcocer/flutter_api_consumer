@@ -1,16 +1,9 @@
-# consume_api
+# CONSUME API
 
-A new Flutter project.
+Experiments in consuming API data in Flutter
 
-## Getting Started
+## Branches
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* `main` - A simple App with a button
+* `loads_from_api` - A simple App that has a welcome page with a button, and upon click, data gets loaded from an API endpoint
+* `api_parent_child` - A complete example of an app that loads data upon launch, shows it in a listview, and clicking rows take you to a child page with data for the row.
