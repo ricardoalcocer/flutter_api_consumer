@@ -16,7 +16,7 @@ class WelcomePage extends StatelessWidget {
         children: <Widget>[
           TextButton(
               onPressed: () {
-                BlocProvider.of<AppCubits>(context).getData();
+                BlocProvider.of<AppCubits>(context).getApiListData();
               },
               child: const Text("Press Me")),
           const Padding(

@@ -20,7 +20,7 @@ class LoadingState extends CubitStates {
 
 class LoadedState extends CubitStates {
   LoadedState(this.places);
-  final List<DataModel> places;
+  final List<ApiListEntryDataModel> places;
 
   @override
   List<Object> get props => [places];

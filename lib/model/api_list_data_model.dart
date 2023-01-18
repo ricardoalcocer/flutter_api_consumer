@@ -1,4 +1,4 @@
-class DataModel {
+class ApiListEntryDataModel {
   String api;
   String description;
   String auth;
@@ -7,7 +7,7 @@ class DataModel {
   String link;
   String category;
 
-  DataModel({
+  ApiListEntryDataModel({
     required this.api,
     required this.description,
     required this.auth,
@@ -17,8 +17,8 @@ class DataModel {
     required this.cors,
   });
 
-  factory DataModel.fromJson(Map<String, dynamic> json) {
-    return DataModel(
+  factory ApiListEntryDataModel.fromJson(Map<String, dynamic> json) {
+    return ApiListEntryDataModel(
       api: json["API"],
       description: json["Description"],
       auth: json["Auth"],
