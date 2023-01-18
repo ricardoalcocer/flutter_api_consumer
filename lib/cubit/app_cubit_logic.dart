@@ -23,8 +23,13 @@ class AppCubitLogic extends StatelessWidget {
             return const HomePage();
           }
           if (state is LoadingState) {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Center(
+                  child: CircularProgressIndicator(),
+                ),
+              ],
             );
           } else {
             return Container();

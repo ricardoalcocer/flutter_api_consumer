@@ -20,8 +20,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: appTitle,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: Color.fromARGB(255, 1, 62, 0),
+        secondary: const Color(0xFFFFC107),
+      )),
       home: BlocProvider<AppCubits>(
         create: (context) => AppCubits(
           data: ApiListDataServices(),

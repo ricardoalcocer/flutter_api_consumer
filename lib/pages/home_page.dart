@@ -33,12 +33,19 @@ class HomePage extends StatelessWidget {
                         );
                       },
                       child: Card(
-                        color: const Color.fromARGB(255, 203, 203, 203),
+                        color: const Color.fromARGB(255, 202, 234, 185),
                         elevation: 4,
                         margin: const EdgeInsets.symmetric(vertical: 1),
                         child: ListTile(
-                          title: Text(info[index].api),
-                          subtitle: Text(info[index].description),
+                          leading: const Icon(Icons.access_alarm_rounded),
+                          title: Text(
+                            info[index].api,
+                            style: const TextStyle(fontSize: 15),
+                          ),
+                          subtitle: Text(
+                            info[index].description,
+                            style: const TextStyle(fontSize: 11),
+                          ),
                         ),
                       ),
                     ),
