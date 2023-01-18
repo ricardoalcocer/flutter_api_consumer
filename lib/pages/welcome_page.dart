@@ -5,8 +5,13 @@ import '../cubit/app_cubits.dart';
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
+  Future init(BuildContext context) async {
+    BlocProvider.of<AppCubits>(context).getApiListData();
+  }
+
   @override
   Widget build(BuildContext context) {
+    init(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Welcome App"),
