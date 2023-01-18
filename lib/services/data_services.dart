@@ -7,9 +7,15 @@ class DataServices {
 
   Future<List<DataModel>> getInfo() async {
     var apiUrl = 'entries';
-    http.Response res = await http.get(Uri.parse(
-      baseUrl + apiUrl,
-    ));
+
+    // TODO: I think this is where any cache logic should live;
+
+    http.Response res = await http.get(
+      Uri.parse(
+        baseUrl + apiUrl,
+      ),
+    );
+
     try {
       if (res.statusCode == 200) {
         List<dynamic> list = json.decode(res.body)['entries'];
