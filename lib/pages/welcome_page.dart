@@ -14,30 +14,31 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     init(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Welcome App"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          TextButton(
-              onPressed: () {
-                BlocProvider.of<AppCubits>(context).getApiListData();
-              },
-              child: const Text("Press Me")),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              "this stuff",
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 12,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+    return Column();
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: const Text("Welcome App"),
+    //   ),
+    //   body: Column(
+    //     mainAxisAlignment: MainAxisAlignment.start,
+    //     children: <Widget>[
+    //       TextButton(
+    //           onPressed: () {
+    //             BlocProvider.of<AppCubits>(context).getApiListData();
+    //           },
+    //           child: const Text("Press Me")),
+    //       const Padding(
+    //         padding: EdgeInsets.all(8.0),
+    //         child: Text(
+    //           "this stuff",
+    //           textAlign: TextAlign.left,
+    //           style: TextStyle(
+    //             fontSize: 12,
+    //           ),
+    //         ),
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 }

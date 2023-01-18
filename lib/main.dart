@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // String app_title = "Load JSON from API";
+    String appTitle = "Load JSON from API";
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: appTitle,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

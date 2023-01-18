@@ -13,7 +13,7 @@ class AppCubitLogic extends StatelessWidget {
     return Scaffold(
       body: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
-          if (state is HomeState) {
+          if (state is LaunchedState) {
             return const WelcomePage();
           }
           if (state is LoadedState) {

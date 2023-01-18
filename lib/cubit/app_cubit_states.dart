@@ -8,7 +8,7 @@ class InitialState extends CubitStates {
   List<Object> get props => [];
 }
 
-class HomeState extends CubitStates {
+class LaunchedState extends CubitStates {
   @override
   List<Object> get props => [];
 }

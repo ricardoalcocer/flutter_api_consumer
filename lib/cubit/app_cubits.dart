@@ -9,7 +9,7 @@ class AppCubits extends Cubit<CubitStates> {
           InitialState(),
         ) {
     emit(
-      HomeState(),
+      LaunchedState(),
     );
   }
 
