@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/app_cubits.dart';
 
-class WelcomePage extends StatelessWidget {
-  const WelcomePage({super.key});
+class BootstrapPage extends StatelessWidget {
+  const BootstrapPage({super.key});
 
   // https://stackoverflow.com/questions/71211611/how-should-i-implement-the-init-method-in-a-stateful-or-stateless-widget
   // this function allows me to run getApiListData immediately after loading, which effectively makes WelcomePage invisible
