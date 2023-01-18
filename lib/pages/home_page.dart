@@ -17,20 +17,22 @@ class HomePage extends StatelessWidget {
             if (state is LoadedState) {
               var info = state.places;
               // print(info.length);
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      info.toString(),
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        fontSize: 12,
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        info.toString(),
+                        textAlign: TextAlign.left,
+                        style: const TextStyle(
+                          fontSize: 12,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             } else {
               return Container();
