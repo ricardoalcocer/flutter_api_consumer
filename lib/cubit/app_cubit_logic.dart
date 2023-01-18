@@ -19,6 +19,9 @@ class AppCubitLogic extends StatelessWidget {
           if (state is LoadedState) {
             return const HomePage();
           }
+          if (state is LoadingError) {
+            return const HomePage();
+          }
           if (state is LoadingState) {
             return const Center(
               child: CircularProgressIndicator(),

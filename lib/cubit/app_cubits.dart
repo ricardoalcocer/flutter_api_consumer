@@ -18,17 +18,12 @@ class AppCubits extends Cubit<CubitStates> {
   late final places;
 
   void getApiListData() async {
+    emit(LoadingState());
     try {
-      emit(
-        LoadingState(),
-      );
       places = await data.getApiListInfo();
-      emit(
-        LoadedState(places),
-      );
+      emit(LoadedState(places));
     } catch (e) {
-      // ignore: avoid_print
-      print(e);
+      emit(LoadingError());
     }
   }
 }

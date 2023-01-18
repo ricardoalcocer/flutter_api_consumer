@@ -25,3 +25,8 @@ class LoadedState extends CubitStates {
   @override
   List<Object> get props => [places];
 }
+
+class LoadingError extends CubitStates {
+  @override
+  List<Object> get props => [];
+}
