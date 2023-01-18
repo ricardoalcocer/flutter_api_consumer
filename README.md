@@ -1,16 +1,9 @@
-# consume_api
+# CONSUME API
 
-A new Flutter project.
+This project is a template of an app that:
 
-## Getting Started
+1. shows a loading indicator while it fetches JSON from an API
+2. displays all entries in a listview (or error if it failed)
+3. each row is clickable and you can see details of the entry
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> BRANCH NAME : `api_parent_child`
