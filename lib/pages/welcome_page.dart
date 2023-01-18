@@ -5,6 +5,8 @@ import '../cubit/app_cubits.dart';
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
+  // https://stackoverflow.com/questions/71211611/how-should-i-implement-the-init-method-in-a-stateful-or-stateless-widget
+  // this function allows me to run getApiListData immediately after loading, which effectively makes WelcomePage invisible
   Future init(BuildContext context) async {
     BlocProvider.of<AppCubits>(context).getApiListData();
   }
