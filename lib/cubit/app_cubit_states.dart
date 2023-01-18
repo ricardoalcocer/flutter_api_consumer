@@ -1,4 +1,4 @@
-import 'package:consume_api/model/data_model.dart';
+import 'package:consume_api/model/api_list_data_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class CubitStates extends Equatable {}
