@@ -4,8 +4,13 @@ import '../services/data_services.dart';
 
 class AppCubits extends Cubit<CubitStates> {
   // AppCubits(super.initialState);
-  AppCubits({required this.data}) : super(InitialState()) {
-    emit(HomeState());
+  AppCubits({required this.data})
+      : super(
+          InitialState(),
+        ) {
+    emit(
+      HomeState(),
+    );
   }
 
   final DataServices data;
@@ -14,9 +19,13 @@ class AppCubits extends Cubit<CubitStates> {
 
   void getData() async {
     try {
-      emit(LoadingState());
+      emit(
+        LoadingState(),
+      );
       places = await data.getInfo();
-      emit(LoadedState(places));
+      emit(
+        LoadedState(places),
+      );
     } catch (e) {
       // ignore: avoid_print
       print(e);
