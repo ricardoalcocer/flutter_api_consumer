@@ -11,6 +11,7 @@ class AppCubitLogic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: BlocBuilder<AppCubits, CubitStates>(
         builder: (context, state) {
           if (state is LaunchedState) {
