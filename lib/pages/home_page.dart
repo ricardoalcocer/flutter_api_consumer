@@ -11,75 +11,85 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Home of App"),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
-            ),
-          ],
-        ),
-        body: BlocBuilder<AppCubits, CubitStates>(
-          builder: (context, state) {
-            if (state is LoadedState) {
-              List<ApiListEntryDataModel> info = state.places;
-              // print(info.length);
-              return ListView.builder(
-                itemCount: info.length,
-                itemBuilder: (_, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(e: info[index]),
-                          ),
-                        );
-                      },
-                      child: Card(
-                        color: const Color.fromARGB(255, 202, 234, 185),
-                        elevation: 4,
-                        margin: const EdgeInsets.symmetric(vertical: 1),
-                        child: ListTile(
-                          leading: const Icon(Icons.access_alarm_rounded),
-                          title: Text(
-                            info[index].api,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          subtitle: Text(
-                            info[index].description,
-                            style: const TextStyle(fontSize: 11),
-                          ),
+      appBar: AppBar(
+        title: const Text("Home of App"),
+      ),
+      body: BlocBuilder<AppCubits, CubitStates>(
+        builder: (context, state) {
+          // ################
+          //  LOADED STATE
+          // ################
+
+          if (state is LoadedState) {
+            List<ApiListEntryDataModel> apiData = state.apiData;
+            // print(info.length);
+            return ListView.builder(
+              itemCount: apiData.length,
+              itemBuilder: (_, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => DetailPage(e: apiData[index]),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      color: const Color.fromARGB(255, 202, 234, 185),
+                      elevation: 4,
+                      margin: const EdgeInsets.symmetric(vertical: 1),
+                      child: ListTile(
+                        leading: const Icon(Icons.access_alarm_rounded),
+                        title: Text(
+                          apiData[index].api,
+                          style: const TextStyle(fontSize: 15),
+                        ),
+                        subtitle: Text(
+                          apiData[index].description,
+                          style: const TextStyle(fontSize: 11),
                         ),
                       ),
                     ),
-                  );
-                },
-              );
-            }
-            if (state is LoadingError) {
-              return const Center(
-                child: Text(
-                  "Error",
-                  style: TextStyle(color: Colors.black),
-                ),
-              );
-            }
+                  ),
+                );
+              },
+            );
+          }
 
-            return Container();
-          },
-        ));
+          // ################
+          //  ERROR STATE
+          // ################
+
+          if (state is LoadingError) {
+            return const Center(
+              child: Text(
+                "Error",
+                style: TextStyle(color: Colors.black),
+              ),
+            );
+          }
+
+          return Container();
+        },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+      ),
+    );
   }
 }

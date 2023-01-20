@@ -19,11 +19,11 @@ class LoadingState extends CubitStates {
 }
 
 class LoadedState extends CubitStates {
-  LoadedState(this.places);
-  final List<ApiListEntryDataModel> places;
+  LoadedState(this.apiData);
+  final List<ApiListEntryDataModel> apiData;
 
   @override
-  List<Object> get props => [places];
+  List<Object> get props => [apiData];
 }
 
 class LoadingError extends CubitStates {

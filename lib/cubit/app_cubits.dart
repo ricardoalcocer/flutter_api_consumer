@@ -15,13 +15,13 @@ class AppCubits extends Cubit<CubitStates> {
 
   final ApiListDataServices data;
   // ignore: prefer_typing_uninitialized_variables
-  late final places;
+  late final apiData;
 
   void getApiListData() async {
     emit(LoadingState());
     try {
-      places = await data.getApiListInfo();
-      emit(LoadedState(places));
+      apiData = await data.getApiListInfo();
+      emit(LoadedState(apiData));
     } catch (e) {
       emit(LoadingError());
     }
