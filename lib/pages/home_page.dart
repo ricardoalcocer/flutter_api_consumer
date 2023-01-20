@@ -14,6 +14,22 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Home of App"),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
+          ],
+        ),
         body: BlocBuilder<AppCubits, CubitStates>(
           builder: (context, state) {
             if (state is LoadedState) {

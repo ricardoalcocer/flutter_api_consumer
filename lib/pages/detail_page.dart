@@ -32,7 +32,7 @@ class DetailPage extends StatelessWidget {
                 child: Text(
                   'Link: ${e.link}',
                 ),
-              )
+              ),
             ],
           ),
         ),
